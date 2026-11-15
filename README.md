@@ -4,10 +4,10 @@ One system for the whole business. The OS is the core: its base, Groupware and W
 shared. Four apps sit on it (Marketing, Sales, Finance and Websites). Each app is a set of mini-apps that are built
 and installed on their own, and each mini-app is made of modules, which are its features.
 
-**Status:** vision and planning. Nothing is built in this repository yet. Most of Marketing and the core of Finance
-work today as the separate apps [Campaign](https://github.com/Ten98-IO-Company/ten98-campaign),
+**Status:** vision and planning. ten98-os is a new app, and nothing in it is built yet. Ten98's earlier work
+is in the separate, pre-release apps [Campaign](https://github.com/Ten98-IO-Company/ten98-campaign),
 [Discover](https://github.com/Ten98-IO-Company/ten98-discover) and
-[Books](https://github.com/Ten98-IO-Company/ten98-books).
+[Books](https://github.com/Ten98-IO-Company/ten98-books). They are sources to draw on, not a base.
 
 ## Who it is for
 

@@ -18,7 +18,8 @@ A tester agent that did not write the mini-app. The parent agent runs the loop.
 ## Steps
 
 1. Before the mini-app is built, the parent writes its acceptance list in the issue: what a person can do when it is
-   done, and what must be refused.
+   done, and what must be refused. The list is drawn from the mini-app's reference app, which sets the bar for
+   features and quality. It is not drawn from the existing Ten98 app.
 2. Build the release image from the merged code and start a fresh deployment from it. Do not test a working copy.
 3. Test every item on the list end to end, through the screens and through the API, as a person would use it.
 4. Test what must fail: another organisation's records, a missing permission, a repeated request and wrong input.

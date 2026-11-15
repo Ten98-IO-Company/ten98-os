@@ -74,10 +74,13 @@ Follow this order for every feature, and stop at the first that fits.
 2. A feature of a package already in this file, such as a Better Auth plugin.
 3. A maintained public library or a provider's API, by [sops/add-a-dependency.md](sops/add-a-dependency.md).
 4. Code copied from a codebase Ten98 owns, by
-   [sops/reuse-a-ten98-function.md](sops/reuse-a-ten98-function.md).
+   [sops/reuse-a-ten98-function.md](sops/reuse-a-ten98-function.md). Copy it only after a test shows that it works.
 5. New code, for the gap only.
 
 Do not wrap a library in functions that only rename it.
+
+The existing apps are pre-release, and many of their flows do not work yet. Their code is not trusted as it stands.
+Each mini-app has a reference app, and that sets the bar for its features and quality.
 
 ## One package per job
 
