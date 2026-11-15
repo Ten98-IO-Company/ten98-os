@@ -59,7 +59,8 @@ is complete.
   in the pull request. Do not copy AGPL or other copyleft code in, and do not open the source code of an AGPL
   reference: study its running product and its documents. Code copied from another project keeps that project's
   licence notice in the file.
-- The tenant is the organisation. The user who signs up owns the app or the organisation they create. "Workspace"
+- Each tenant has its own deployment. Inside it, data is separated strictly by organisation. The user who signs up
+  owns the app or the organisation they create. "Workspace"
   means only the part of the core where work is done.
 - A mini-app owns its tables. Reach another mini-app's data through the core or through that mini-app.
 - Views work on all records: the OS's own records as well as custom tables. A view changes a record only through the
@@ -74,6 +75,9 @@ is complete.
 - Never open, print, copy or summarise a credentials file. Never put a secret in a brief, commit, issue, pull
   request or message. Scan for secrets before every push.
 - Never report a security defect that no release has fixed in an issue, pull request, commit message or the wiki.
+- This repository and its wiki are public and hold only ten98-os's own code. The app that manages SaaS deployments
+  and the deployment set-up are private. Never put their code, server names or details of how deployments are run
+  here.
 
 ## Handing work to another agent
 
