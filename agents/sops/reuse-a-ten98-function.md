@@ -12,10 +12,12 @@ packages.
 Functions in [Campaign](https://github.com/Ten98-IO-Company/ten98-campaign),
 [Discover](https://github.com/Ten98-IO-Company/ten98-discover),
 [Books](https://github.com/Ten98-IO-Company/ten98-books) and the
-[code-system](https://github.com/Ten98-IO-Company/ten98-code-system). They share the OS's stack, so their code
+[code-system](https://github.com/Ten98-IO-Company/ten98-code-system). They share the OS's core stack, so much of their server code
 carries over.
 
-Interface components are not copied from the design system. The OS uses shadcn/ui and daisyUI.
+Screens are rebuilt, not copied: the OS uses shadcn/ui and daisyUI in place of the design system. Server code
+carries over with changes. Expect to change its tenant keys to the organisation, and its hand-written SQL to typed
+queries.
 
 ## Who
 
@@ -41,7 +43,7 @@ The agent building the module that needs the function.
 | The code uses something outside [STACK.md](../STACK.md) | Rewrite that part on the stack. Do not bring the other tool in |
 | The source has a known defect | Fix it in the OS and say so in the pull request |
 | The file carries someone else's copyright notice | Keep that notice with the copied code |
-| The code is not Ten98's own | Treat it as a dependency, by [add-a-dependency](add-a-dependency.md) |
+| The code is not Ten98's own | Treat a package as a dependency, by [add-a-dependency](add-a-dependency.md). Code copied from another project keeps its licence notice in the file and is listed in the repository's notices file |
 | The function handles sign-in, tenancy or money | Ask for a review by an agent that did not write it |
 
 ## Done when

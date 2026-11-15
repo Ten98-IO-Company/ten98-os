@@ -25,7 +25,7 @@ is complete.
 
 - Start every task by [agents/sops/start-a-task.md](agents/sops/start-a-task.md).
 - Question the request before you plan. Find its crux, and carry out the best version of it. Say what you changed
-  and why.
+  and why. A child agent keeps to its brief: it proposes a better version to its parent and waits.
 - Do a task yourself only when it is a leaf. Otherwise split it by
   [agents/sops/split-and-delegate.md](agents/sops/split-and-delegate.md).
 - Run independent parts at the same time, each in its own session on its own feature branch.
@@ -56,7 +56,9 @@ is complete.
   in the pull request.
 - The licence is PolyForm Strict 1.0.0: no redistribution, no changes by outside people, and no commercial use.
   Take an outside contribution only when its author has accepted [CONTRIBUTOR-AGREEMENT.md](CONTRIBUTOR-AGREEMENT.md)
-  in the pull request. Do not copy AGPL or other copyleft code in.
+  in the pull request. Do not copy AGPL or other copyleft code in, and do not open the source code of an AGPL
+  reference: study its running product and its documents. Code copied from another project keeps that project's
+  licence notice in the file.
 - The tenant is the organisation. The user who signs up owns the app or the organisation they create. "Workspace"
   means only the part of the core where work is done.
 - A mini-app owns its tables. Reach another mini-app's data through the core or through that mini-app.
@@ -66,9 +68,11 @@ is complete.
   code change. Until code starts, pull requests go into `main`. Once it starts, they go into `dev` first and reach
   `main` when tested, as in the other Ten98 apps.
 - The wiki is its own git repository in `wiki/` and is pushed directly to its `master` branch.
+- A change merges only when the automated checks pass on its latest commit. The lockfile, schema changes and
+  shared components change on one branch at a time.
 - Deployments, and anything else that faces outward, need the owner's yes each time.
 - Never open, print, copy or summarise a credentials file. Never put a secret in a brief, commit, issue, pull
-  request or message.
+  request or message. Scan for secrets before every push.
 - Never report a security defect that no release has fixed in an issue, pull request, commit message or the wiki.
 
 ## Handing work to another agent

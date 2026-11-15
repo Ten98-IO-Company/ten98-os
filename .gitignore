@@ -1,2 +1,14 @@
 # The GitHub wiki is its own git repository, cloned here for editing.
 /wiki/
+
+# Secrets and local settings never enter the repository.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Installed packages and build output.
+node_modules/
+.output/
+dist/
