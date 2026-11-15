@@ -28,6 +28,7 @@ may have installed. If your tool does not have one, follow the procedure in [sop
 | Ledger, statement or reconciliation logic | `financial-statements`, `reconciliation` | [build-a-module](sops/build-a-module.md) |
 | Unclear scope, or a fresh read before handing off | The matching `paperthin` skill | [finish-and-hand-off](sops/finish-and-hand-off.md) |
 | Reviewing someone else's change | A fresh agent, or a review plugin | [review-a-change](sops/review-a-change.md) |
+| Accepting a finished mini-app | A browser-testing skill, `verification-before-completion` | [accept-a-mini-app](sops/accept-a-mini-app.md) |
 | Writing or changing a procedure | `process-doc` | None |
 | Wiki pages and specifications | `doc-coauthoring` | None |
 

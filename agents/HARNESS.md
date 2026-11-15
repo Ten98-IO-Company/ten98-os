@@ -43,12 +43,23 @@ Use swarms or several sessions at once. Each feature is handled on its own, on i
 possible.
 
 - Parts that do not depend on each other run at the same time: as a swarm of child agents, or as separate sessions.
+- There is no cap on how many parts run at once.
 - Parts that depend on each other run in order.
 - Each part has its own feature branch and its own files. A separate checkout is a worktree inside the repository's
   `.claude/worktrees` folder, never a second folder beside the repository.
 - One agent, the parent, integrates. It owns the branch the parts merge into.
 - A session has a name that says what it does, such as "ten98-os: Receivables invoices".
 - A session is closed once its work is merged.
+
+## Deciding that work is done
+
+The loop runs on its own: build, test end to end, fix, and test again. It does not wait for the owner.
+
+- A module is done when its checks pass and an agent that did not write it has reviewed it.
+- A mini-app is done when a tester agent that did not write it has tested it end to end on a fresh deployment, by
+  [sops/accept-a-mini-app.md](sops/accept-a-mini-app.md).
+- The owner is asked only for an environment setting, for a decision that is theirs, or when an issue survives two
+  attempts.
 
 ## Models
 

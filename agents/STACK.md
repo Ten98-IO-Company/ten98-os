@@ -127,7 +127,7 @@ No package for these jobs is installed before the owner chooses one.
 | Access to AI models | The core's review |
 | Site builder, editor, whiteboard and flow canvas | Each app's review |
 | Search beyond PostgreSQL's own | When PostgreSQL's search is not enough |
-| Linter and formatter | None for now |
+| Which formatter and which linter | When development starts. One of each is used from the first commit |
 | Cluster add-ons: certificates, a PostgreSQL operator, metrics | The deployment design |
 
 ## Rules of good practice
@@ -161,6 +161,7 @@ from it. Keep it DRY, and keep it simple (KISS).
   the TypeScript files directly.
 - No `any`, `@ts-ignore` or `@ts-nocheck`. Data from outside is `unknown` until zod has checked it.
 - Modules are ES modules.
+- One formatter and one linter run on every change. The linter has a rule against unawaited database calls.
 
 ### Screens
 
@@ -197,6 +198,8 @@ from it. Keep it DRY, and keep it simple (KISS).
   expected list, so a generated change cannot drop a guard.
 - Money is whole minor units in `bigint`, as in Books. Quantities and rates are `numeric`, and times are
   `timestamptz`. Never a floating-point number or a local time.
+- Visit data lives in its own tables, split by day, so old days are dropped whole. Recordings are files in file
+  storage, never rows.
 - Every foreign key has an index.
 - A write that touches several tables is one transaction.
 
@@ -225,6 +228,7 @@ from it. Keep it DRY, and keep it simple (KISS).
   through its settings.
 - A deployment runs on its own. It never needs the app that manages SaaS deployments, and without a shared service
   the mini-apps that need it stay off.
+- Univer blocks are opened only inside the OS, on subdomains of one main domain. Published sites carry none.
 - A role keeps nothing on its own disk.
 - Settings come from the environment and are checked by zod at start-up. A missing setting stops the start.
 - Every role answers a health check, and finishes the work in hand before it exits.
@@ -245,7 +249,9 @@ from it. Keep it DRY, and keep it simple (KISS).
 - Browser flows are tested with Playwright.
 - Tests run on the local machine. A test never spends money, sends a real message, uses a provider's live
   credentials or types a real password.
-- One command runs every check: types, the stack check, tests and the build.
+- One command runs every check: the formatter, the linter, types, the stack check, tests and the build.
+- A mini-app is done only when a tester agent that did not write it has tested it end to end on a fresh deployment,
+  by [sops/accept-a-mini-app.md](sops/accept-a-mini-app.md).
 
 ## The automated check
 
