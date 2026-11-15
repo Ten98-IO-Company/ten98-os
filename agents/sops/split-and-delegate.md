@@ -18,9 +18,11 @@ The parent agent. It stays the owner of the result.
 
 1. Split along the product: an app into mini-apps, a mini-app into modules.
 2. Give each child files that it alone owns. List the shared files and keep them for yourself.
-3. Write a brief for each child, with every part listed in [HARNESS.md](../HARNESS.md).
+3. Write a brief for each child, with every part listed in [HARNESS.md](../HARNESS.md), including its model and
+   effort.
 4. Create an issue for each brief and link it to your own issue.
-5. Start the children. Run them at the same time when they do not depend on each other, and in order when they do.
+5. Start the children, each in its own session on its own feature branch. Run them at the same time when they do
+   not depend on each other, and in order when they do.
 6. When a child reports, run its acceptance checks yourself.
 7. Accept the work, or send it back with one concrete objection: a failing check or missing evidence.
 8. Integrate the accepted work, run your own checks, and report up.

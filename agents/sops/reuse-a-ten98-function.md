@@ -4,16 +4,18 @@
 
 ## Purpose
 
-Reuse working code from the existing Ten98 apps without depending on their packages.
+Copy working code from the existing Ten98 apps when no library or API does the job, without depending on their
+packages.
 
 ## Scope
 
 Functions in [Campaign](https://github.com/Ten98-IO-Company/ten98-campaign),
 [Discover](https://github.com/Ten98-IO-Company/ten98-discover),
-[Books](https://github.com/Ten98-IO-Company/ten98-books), the
-[code-system](https://github.com/Ten98-IO-Company/ten98-code-system) and the
-[design system](https://github.com/Ten98-IO-Company/ten98-design-system). They share the OS's stack, so their code
+[Books](https://github.com/Ten98-IO-Company/ten98-books) and the
+[code-system](https://github.com/Ten98-IO-Company/ten98-code-system). They share the OS's stack, so their code
 carries over.
+
+Interface components are not copied from the design system. The OS uses shadcn/ui and daisyUI.
 
 ## Who
 
@@ -21,17 +23,20 @@ The agent building the module that needs the function.
 
 ## Steps
 
-1. Search those repositories for a function that already does the job.
-2. Read it with its callers and its tests, at one commit.
-3. Copy the smallest complete piece: the function, what it needs, and its tests.
-4. Adapt it to the OS: its records, its organisation as the tenant, and its names.
-5. Record the source in the pull request: the repository, the commit and the file path.
-6. Run the copied tests in the OS, and add tests for what you changed.
+1. Confirm that the earlier steps of the reuse order in [STACK.md](../STACK.md) found nothing: the platform, a
+   package already in the stack, and a public library or a provider's API.
+2. Search those repositories for a function that already does the job.
+3. Read it with its callers and its tests, at one commit.
+4. Copy the smallest complete piece: the function, what it needs, and its tests.
+5. Adapt it to the OS: its records, its organisation as the tenant, and its names.
+6. Record the source in the pull request: the repository, the commit and the file path.
+7. Run the copied tests in the OS, and add tests for what you changed.
 
 ## Exceptions
 
 | Situation | What to do |
 |---|---|
+| The function only wraps a library | Do not copy it. Use the library directly |
 | The function leans on a large part of its package | Copy it only if the whole piece is small. Otherwise write it new |
 | The code uses something outside [STACK.md](../STACK.md) | Rewrite that part on the stack. Do not bring the other tool in |
 | The source has a known defect | Fix it in the OS and say so in the pull request |

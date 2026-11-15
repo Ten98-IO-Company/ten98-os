@@ -22,8 +22,12 @@ An agent that did not write the change.
 4. Check the rules in [AGENTS.md](../../AGENTS.md): only owned files changed, each mini-app keeps to its own
    tables, nothing falls outside [STACK.md](../STACK.md), every new package is pinned with its licence recorded,
    and no secret is in the diff.
-5. For money, access or tenancy, try one case that should fail and confirm that it does.
-6. Give a verdict in the pull request: accept, or list each objection with the check or evidence behind it.
+5. Check the reuse order: nothing is hand-written that the platform or a package in the stack already does, and
+   nothing is written twice.
+6. For money, access or tenancy, try one case that should fail and confirm that it does.
+7. Give a verdict in the pull request, naming the commit you reviewed: accept, or list each objection with the
+   check or evidence behind it.
+8. Merge an accepted change. The agent that wrote it does not merge it.
 
 ## Exceptions
 
@@ -35,4 +39,4 @@ An agent that did not write the change.
 
 ## Done when
 
-The pull request holds a verdict with its evidence.
+The pull request holds a verdict with its evidence and the commit it covers.
