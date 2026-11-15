@@ -16,7 +16,8 @@ The agent that owns the module's files.
 
 ## Steps
 
-1. Find the module on the wiki's Structure page and read its mini-app's page.
+1. Find the module on the wiki's Structure page and read its mini-app's page. Note its reference app, which sets the
+   bar for features and quality.
 2. Do not reinvent the wheel. Follow the reuse order in [STACK.md](../STACK.md): the platform, a package already
    in the stack, a public library or a provider's API by [add-a-dependency](add-a-dependency.md), then code from a
    Ten98 app by [reuse-a-ten98-function](reuse-a-ten98-function.md). Write new code only for what is left.

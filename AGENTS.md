@@ -6,8 +6,8 @@ instruction file only points here.
 ten98-os is one system for the whole business: a core (base, Groupware, Workspace) and four apps on it (Marketing,
 Sales, Finance, Websites). Each app is a set of mini-apps, and each mini-app is made of modules.
 
-Status: vision. Development has not started. It begins when the stack unification of Campaign, Discover and Books
-is complete.
+Status: vision. ten98-os is a new app. It is not a move or a merger of Ten98's earlier apps. Development has not
+started. It begins when the stack unification of Campaign, Discover and Books is complete.
 
 ## Read first
 
@@ -47,6 +47,9 @@ is complete.
 - Do not reinvent the wheel. Follow the reuse order in [agents/STACK.md](agents/STACK.md): the platform, a package
   already in the stack, a public library or a provider's API, code copied from a codebase Ten98 owns, and new code
   only for the gap.
+- Do not trust code from the existing Ten98 apps as it stands. They are pre-release, and many of their flows do not
+  work yet. Copy a piece only after a test shows that it works, and measure every mini-app against its reference
+  app.
 - Write once. Every idea and every piece of data has one home, and the rest is derived from it. Keep it DRY, and
   keep it simple (KISS).
 - The interface is Tailwind CSS with shadcn/ui and daisyUI. Both are used everywhere, on one theme, with one shared
