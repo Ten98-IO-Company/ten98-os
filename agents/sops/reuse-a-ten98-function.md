@@ -30,7 +30,7 @@ The agent building the module that needs the function.
 2. Search those repositories for a function that already does the job.
 3. Read it with its callers and its tests, at one commit.
 4. Copy the smallest complete piece: the function, what it needs, and its tests.
-5. Adapt it to the OS: its records, its organisation as the tenant, and its names.
+5. Adapt it to the OS: its records, the organisation as the unit that data is separated by, and its names.
 6. Record the source in the pull request: the repository, the commit and the file path.
 7. Run the copied tests in the OS, and add tests for what you changed.
 

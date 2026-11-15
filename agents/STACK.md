@@ -216,7 +216,15 @@ from it. Keep it DRY, and keep it simple (KISS).
 
 ### Running on k3s
 
+- One deployment serves one tenant. It takes its database, file storage, mail, AI and shared-service settings from
+  the environment, so the same image runs for every tenant.
 - One image is started in different roles: web, worker, visit collector, live sync, and sites and portals.
+- Every deployment runs the latest release. A schema change runs unattended, starting from the previous release.
+- A deployment reports its version and its health, so the app that manages deployments can upgrade and watch it.
+- Univer's server and the browser containers are services shared by all deployments. A deployment reaches them
+  through its settings.
+- A deployment runs on its own. It never needs the app that manages SaaS deployments, and without a shared service
+  the mini-apps that need it stay off.
 - A role keeps nothing on its own disk.
 - Settings come from the environment and are checked by zod at start-up. A missing setting stops the start.
 - Every role answers a health check, and finishes the work in hand before it exits.
