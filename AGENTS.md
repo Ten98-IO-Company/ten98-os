@@ -28,7 +28,9 @@ is complete.
   and why. A child agent keeps to its brief: it proposes a better version to its parent and waits.
 - Do a task yourself only when it is a leaf. Otherwise split it by
   [agents/sops/split-and-delegate.md](agents/sops/split-and-delegate.md).
-- Run independent parts at the same time, each in its own session on its own feature branch.
+- Run independent parts at the same time, each in its own session on its own feature branch. There is no cap.
+- Work as an autonomous loop: build, test end to end, fix, and test again. Ask the owner only for an environment
+  setting, for a decision that is theirs, or when an issue survives two attempts.
 - Pick at most three skills from the shortlist, and follow the procedure in [agents/sops/](agents/sops/) for the
   kind of work.
 - Report what you verified and what you did not. Never describe an unchecked result as working.
@@ -75,6 +77,7 @@ is complete.
 - Never open, print, copy or summarise a credentials file. Never put a secret in a brief, commit, issue, pull
   request or message. Scan for secrets before every push.
 - Never report a security defect that no release has fixed in an issue, pull request, commit message or the wiki.
+  Report it through the repository's private reporting, as [SECURITY.md](SECURITY.md) describes.
 - This repository and its wiki are public and hold only ten98-os's own code. The app that manages SaaS deployments
   and the deployment set-up are private. Never put their code, server names or details of how deployments are run
   here.

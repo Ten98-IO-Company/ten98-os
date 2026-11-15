@@ -24,4 +24,4 @@ A pull request without that sentence is not merged.
 ## Security
 
 Do not report a security defect that no release has fixed in an issue, a pull request or the wiki. Report it
-privately to the maintainers.
+privately through the repository's Security tab, as [SECURITY.md](SECURITY.md) describes.
