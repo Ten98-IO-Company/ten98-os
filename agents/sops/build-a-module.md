@@ -24,7 +24,7 @@ The agent that owns the module's files.
    owns it.
 4. Declare what the module adds, once: its records for views, the events it emits, the actions it offers, and its
    permissions. Derive the rest from that declaration.
-5. Build the screen from shadcn/ui components, or from daisyUI on a published site. Add a missing component to the
+5. Build the screen from the OS's shared components, which come from shadcn/ui and daisyUI. Add a missing one to the
    OS's shared components, not inside the mini-app.
 6. Ask the core for anything outside: a browser, a provider, an AI model, files, mail.
 7. Write the tests with the code and run the checks.
