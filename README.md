@@ -26,7 +26,9 @@ The docs are in the [wiki](https://github.com/Ten98-IO-Company/ten98-os/wiki):
 
 ## Licence
 
-The licence text is being finalised. The intent is public source for contribution, education and personal use by a
-single user on their own machine, with commercial use not permitted. Until the licence is published in
-[LICENSE](LICENSE), all rights are reserved. See the wiki's
+ten98-os is released under the [PolyForm Strict License 1.0.0](LICENSE). You may read the source and use the software
+for non-commercial purposes. You may not redistribute it, change it, or use it for any commercial purpose, which
+includes generating revenue from it. Anything more needs a written agreement with Ten98 Technologies Ltd.
+
+Copyright (c) 2026 Ten98 Technologies Ltd. See the wiki's
 [Licence](https://github.com/Ten98-IO-Company/ten98-os/wiki/Licence) page.
