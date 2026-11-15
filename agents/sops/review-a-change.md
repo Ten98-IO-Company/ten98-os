@@ -34,6 +34,7 @@ An agent that did not write the change.
 | Situation | What to do |
 |---|---|
 | You cannot run the checks | Say so. Do not accept |
+| The change comes from an outside contributor | Read the whole diff first. Run its checks only in a sandbox that holds no credentials |
 | You would have written it differently | That is not an objection. Raise only what a check or a rule supports |
 | The same objection comes back a second time | Stop the loop and report to the parent or the owner |
 

@@ -17,7 +17,8 @@ The agent holding the task.
 ## Steps
 
 1. Run all the checks and put a summary of the results in the pull request.
-2. Read your own diff. Remove debug output, unused code and scratch files.
+2. Read your own diff. Remove debug output, unused code and scratch files. Scan it for secrets, keys and personal
+   data before any push.
 3. Update the wiki if behaviour or structure changed. Only the owner's decisions go on the Decisions page.
 4. Push the branch and open or update the pull request. Say what changed, what you verified, what you did not
    verify and what is not done.
@@ -31,7 +32,7 @@ The agent holding the task.
 |---|---|
 | A check fails and you cannot fix it | Report the failing output. Do not mark the task done |
 | A secret is in the diff | Remove it, and tell the owner so it can be replaced |
-| You are out of capacity before step 1 | Go straight to step 5. A pushed branch with a note beats unpushed work |
+| You are out of capacity before step 1 | Scan the diff for secrets, then go straight to step 5. A pushed branch with a note beats unpushed work |
 
 ## Done when
 

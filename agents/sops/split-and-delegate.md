@@ -32,6 +32,7 @@ The parent agent. It stays the owner of the result.
 | Situation | What to do |
 |---|---|
 | Two children need the same file | Keep that file yourself, or split differently |
+| Children need the lockfile, a schema change or a shared component | Make those changes yourself, one at a time |
 | A child fails the same check twice | Stop it and decide: change the brief, take the work back, or report up |
 | The depth limit is reached | Do the remaining work as a sequence of leaves |
 | Your tool cannot start child agents | Run the children one after another, each from its brief, in a fresh session |

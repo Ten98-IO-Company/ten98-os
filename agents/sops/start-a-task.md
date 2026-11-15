@@ -19,7 +19,8 @@ The agent taking the task.
 1. Read [AGENTS.md](../../AGENTS.md) and the task's issue.
 2. Read the wiki pages the task touches: Decisions first, then Structure and the page for the app.
 3. Question the request. Write its crux in one sentence: what it is really for. If a better version would serve
-   that crux, plan that version, and say what you changed and why.
+   that crux, plan that version, and say what you changed and why. If the task came from a parent agent, propose
+   the better version to it and keep to the brief until it answers.
 4. Pick skills from [SKILLS.md](../SKILLS.md), three at most, and read each one.
 5. Decide whether the task is a leaf, using the test in [HARNESS.md](../HARNESS.md).
 6. For a leaf, create a feature branch for the task and follow the matching procedure. For anything larger, follow
@@ -31,7 +32,8 @@ The agent taking the task.
 | Situation | What to do |
 |---|---|
 | The task conflicts with a decision | Stop and report. Do not change what is decided |
-| The best version differs a lot from what was asked | Do it, and put the difference first in your report, so it is easy to reverse |
+| The best version differs a lot from what the owner asked | Do it, and put the difference first in your report, so it is easy to reverse |
+| The best version differs from a parent agent's brief | Propose it and wait. Do not change your own brief |
 | The task needs a decision nobody has made | Ask the owner, then record the answer on the Decisions page |
 | The Decisions page already answers the question | Do not ask again. A decision is given once |
 | Another agent already holds the issue or branch | Do not start. Ask for a hand-off |
