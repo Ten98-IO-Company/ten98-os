@@ -21,9 +21,12 @@ is complete.
 
 - The wiki's Decisions page is the record. A proposal is not a decision until it is listed there as decided.
 - Write documentation to the wiki, not to `docs/` or the README. The README stays short.
-- The licence is PolyForm Strict 1.0.0: no redistribution, no changes by outside people, and no commercial use. Do
-  not accept an outside contribution until a contributor agreement exists. Do not copy AGPL or other copyleft code
-  in. Pin the version and check the licence of every dependency you add.
+- The licence is PolyForm Strict 1.0.0: no redistribution, no changes by outside people, and no commercial use.
+  Take an outside contribution only when its author has accepted [CONTRIBUTOR-AGREEMENT.md](CONTRIBUTOR-AGREEMENT.md)
+  in the pull request. Do not copy AGPL or other copyleft code in. Pin the version and check the licence of every
+  dependency you add.
+- Views work on all records: the OS's own records as well as custom tables. A view changes a record only through the
+  mini-app that owns it.
 - Install public packages directly. In-house libraries are small, hold only what is unique to Ten98, and live in
   their own repository so they can be reused. The design system is a custom library.
 - The tenant is the organisation. The user who signs up owns the app or the organisation they create. "Workspace"

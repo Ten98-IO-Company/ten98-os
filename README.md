@@ -24,6 +24,11 @@ The docs are in the [wiki](https://github.com/Ten98-IO-Company/ten98-os/wiki):
 - [Roadmap](https://github.com/Ten98-IO-Company/ten98-os/wiki/Roadmap): the order of work.
 - [Decisions](https://github.com/Ten98-IO-Company/ten98-os/wiki/Decisions): what is decided and what is open.
 
+## Contributing
+
+Development has not started. See [CONTRIBUTING.md](CONTRIBUTING.md). The licence does not allow changes, so every
+outside contribution needs the [Contributor Agreement](CONTRIBUTOR-AGREEMENT.md).
+
 ## Licence
 
 ten98-os is released under the [PolyForm Strict License 1.0.0](LICENSE). You may read the source and use the software
