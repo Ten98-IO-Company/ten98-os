@@ -16,11 +16,13 @@ The agent that needs the package.
 
 ## Steps
 
-1. Confirm that no package already installed, and no core service, does the job.
-2. Check [STACK.md](../STACK.md). The package must not do the job of a stack layer.
-3. Check the licence. MIT, Apache-2.0 and BSD are fine. Anything else follows the exceptions below.
+1. Confirm that the platform, a package already installed, or a core service does not already do the job.
+2. Check [STACK.md](../STACK.md). The package must not do the job of a stack layer or of a package listed under
+   "One package per job".
+3. Check the licence of the exact version. MIT, ISC, Apache-2.0 and BSD are fine. Anything else follows the
+   exceptions below.
 4. Check that the package is maintained.
-5. Pin the exact version.
+5. Pin the exact version: the latest stable release, not a pre-release.
 6. Record the package, its version, its licence and the reason in the pull request.
 7. Keep the package's notice where its licence asks for one.
 
@@ -30,6 +32,7 @@ The agent that needs the package.
 |---|---|
 | The package is a second choice for a stack layer | Do not install it. Only the owner changes the stack |
 | The licence is GPL, AGPL or another copyleft licence | Do not install it. Study it as a reference only |
+| A newer version changed to a copyleft licence | Stay on the last version under a permitted licence, and record that in [STACK.md](../STACK.md) |
 | The licence is commercial or source-available | Ask the owner. Univer's licensed version is already approved |
 | The package calls an outside provider | Put it behind the core's connection for that kind of provider |
 | The thing is a server, not a library | It runs as its own part of the deployment, not as a dependency |

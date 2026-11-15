@@ -19,7 +19,8 @@ The agent holding the task.
 1. Run all the checks and put a summary of the results in the pull request.
 2. Read your own diff. Remove debug output, unused code and scratch files.
 3. Update the wiki if behaviour or structure changed. Only the owner's decisions go on the Decisions page.
-4. Push the branch and open or update the pull request. Say what changed, how it was checked and what is not done.
+4. Push the branch and open or update the pull request. Say what changed, what you verified, what you did not
+   verify and what is not done.
 5. If you are stopping part-way, push the work in progress and add a hand-off note to the pull request: what is
    done, what is left, the next step, and how to check it.
 6. Report to the parent agent, or to the owner if there is none.
