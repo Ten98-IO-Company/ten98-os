@@ -23,8 +23,7 @@ development starts.
 | Build | Vite, with `@vitejs/plugin-react` | 8.3.8 and 6.3.0 |
 | Interface | React | 19.3.1 |
 | Styling | Tailwind CSS, with `@tailwindcss/vite` | 4.3.5 |
-| Components inside the OS | shadcn/ui, on Base UI | `shadcn` 4.23.0 and `@base-ui/react` 1.9.0 |
-| Components on published sites | daisyUI | 5.8.1 |
+| Components | shadcn/ui on Base UI, and daisyUI | `shadcn` 4.23.0, `@base-ui/react` 1.9.0 and `daisyui` 5.8.1 |
 | Database | PostgreSQL, with row-level security forced | 18.7 |
 | Data access | Drizzle over `pg` | 0.45.4 and 8.23.1 |
 | Schema changes | drizzle-kit | 0.31.11 |
@@ -49,15 +48,19 @@ development starts.
 
 ## Interface
 
-Tailwind CSS is used everywhere. The two component sets are kept apart: both define colours named primary,
-secondary and accent, so one style sheet cannot hold both.
+Tailwind CSS, shadcn/ui and daisyUI are used everywhere: on the OS's own screens and on the sites, stores and
+portals the builder publishes.
 
-| Surface | Components | Why |
-|---|---|---|
-| The OS's own screens | shadcn/ui | Working components with keyboard and screen-reader behaviour: dialogs, menus, forms and tables |
-| Sites, stores and portals the builder publishes | daisyUI | Styles only, so pages stay light, and each site carries its own theme |
+| Set | What it gives |
+|---|---|
+| shadcn/ui | Working components with keyboard and screen-reader behaviour: dialogs, menus, forms and tables |
+| daisyUI | Ready styles and themes, with no script: buttons, cards, navigation and page sections |
 
-- Look in the component set first. Write a component only when the set has none, and add it to the OS's shared
+- **One theme.** The theme is written once, as a daisyUI theme. shadcn/ui's colour names point at it, so both sets
+  share the same colours, and a site or an organisation changes them in one place.
+- **One component for each element.** Where both sets have the same element, such as a button, the OS's shared
+  components pick one. The same element then looks the same everywhere.
+- Look in the two sets first. Write a component only when neither has one, and add it to the OS's shared
   components, not inside a mini-app.
 - A common feature looks and works the same in every mini-app: one component and one layout.
 - Colours, spacing and type sizes come from the theme, never from a literal value.
@@ -83,7 +86,7 @@ Do not wrap a library in functions that only rename it.
 | Pages, routes and loading data | TanStack Start and Router | A second router, a data-fetching library, a global state library |
 | Serving the app | Nitro, as a Node server | Express, Fastify, Hono or any second server |
 | Styling | Tailwind CSS | CSS-in-JS, a second CSS framework |
-| Components | shadcn/ui inside the OS, daisyUI on published sites | A third component set, or both sets on one surface |
+| Components | shadcn/ui and daisyUI, on one theme | A third component set, or two versions of the same element |
 | Reading and writing the database | Drizzle over `pg` | A second ORM, query builder or driver |
 | Checking input | zod | Any other validation library |
 | Sign-in, organisations, roles and invitations | Better Auth and its plugins | `openid-client`, hand-written sessions, tokens or invitations |
@@ -239,7 +242,8 @@ version moves by a pull request.
 - A second data-access library or database, such as Prisma, MongoDB or SQLite.
 - A lockfile from npm, Yarn or Bun.
 - A second validation or sign-in library.
-- daisyUI classes on an OS screen, or shadcn/ui components on a published site.
+- Two versions of the same element, such as a daisyUI button on one screen and a shadcn/ui button on another.
+- A second theme, or a colour set outside the theme.
 - A hand-written component, helper or wrapper for something a package in this file already does.
 - A JavaScript file, or a TypeScript file with checking disabled.
 - A version range, a pre-release other than Nitro, or `ua-parser-js` 2.

@@ -47,7 +47,8 @@ is complete.
   only for the gap.
 - Write once. Every idea and every piece of data has one home, and the rest is derived from it. Keep it DRY, and
   keep it simple (KISS).
-- The interface is Tailwind CSS, with shadcn/ui inside the OS and daisyUI on published sites.
+- The interface is Tailwind CSS with shadcn/ui and daisyUI. Both are used everywhere, on one theme, with one shared
+  component for each element.
 - Comply strictly with the stack in [agents/STACK.md](agents/STACK.md). Nothing outside it enters the code base,
   and only the owner changes it.
 - Install public packages by [agents/sops/add-a-dependency.md](agents/sops/add-a-dependency.md). Copy Ten98's own
