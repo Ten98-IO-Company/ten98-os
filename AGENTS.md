@@ -7,7 +7,7 @@ ten98-os is one system for the whole business: a core (base, Groupware, Workspac
 Sales, Finance, Websites). Each app is a set of mini-apps, and each mini-app is made of modules.
 
 Status: vision. ten98-os is a new app. It is not a move or a merger of Ten98's earlier apps. Development has not
-started. It begins when the stack unification of Campaign, Discover and Books is complete.
+started. It begins when the stack unification of those apps is complete.
 
 ## Read first
 
@@ -48,8 +48,9 @@ started. It begins when the stack unification of Campaign, Discover and Books is
   already in the stack, a public library or a provider's API, code copied from a codebase Ten98 owns, and new code
   only for the gap.
 - Do not trust code from the existing Ten98 apps as it stands. They are pre-release, and many of their flows do not
-  work yet. Copy a piece only after a test shows that it works, and measure every mini-app against its reference
-  app.
+  work yet. Copy a piece only after a test shows that it works.
+- A mini-app's features come from its reference app, named on the wiki's Build approach page, and the mini-app is
+  measured against it. Do not name an earlier Ten98 app in the code, the wiki or a plan as the source of a feature.
 - Write once. Every idea and every piece of data has one home, and the rest is derived from it. Keep it DRY, and
   keep it simple (KISS).
 - The interface is Tailwind CSS with shadcn/ui and daisyUI. Both are used everywhere, on one theme, with one shared
