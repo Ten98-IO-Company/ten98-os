@@ -79,8 +79,8 @@ Follow this order for every feature, and stop at the first that fits.
 
 Do not wrap a library in functions that only rename it.
 
-The existing apps are pre-release, and many of their flows do not work yet. Their code is not trusted as it stands.
-Each mini-app has a reference app, and that sets the bar for its features and quality.
+Each mini-app has a reference app, named on the wiki's Build approach page. It sets the bar for the mini-app's
+features and quality. Code from Ten98's earlier apps is not trusted as it stands.
 
 ## One package per job
 
@@ -100,20 +100,20 @@ Each mini-app has a reference app, and that sets the bar for its features and qu
 | Tests | Node's test runner and Playwright | Jest, Vitest, Cypress, Puppeteer |
 | Building | Vite | A second bundler |
 
-## Carried over from the existing apps
+## Packages for single mini-apps
 
 These are installed when the mini-app that needs them is built.
 
-| Package in the existing apps | In ten98-os | Why |
+| Package | In ten98-os | Why |
 |---|---|---|
-| `@ten98/runtime` | Dropped | Libraries and APIs do its jobs. See the wiki's Build approach page |
-| `@ten98/ui` | Dropped | Tailwind CSS, shadcn/ui and daisyUI replace it |
-| `openid-client` | Dropped | Better Auth does sign-in |
-| `detect-browser` | Dropped | `ua-parser-js` does the same job |
-| `ua-parser-js` | Kept at 1.0.41 | Reads the visitor's browser. The 1.x line is MIT. Version 2 is AGPL and must not be installed |
-| `parse5` 8.1.1 and `saxes` 6.0.0 | Kept | One reads HTML and the other reads XML |
-| `mmdb-lib` 3.0.5 | Kept | Finds a visitor's country |
-| `qrcode-generator` 2.0.4 | Kept | Makes QR codes |
+| `@ten98/runtime` | Not used | Libraries and APIs do its jobs. See the wiki's Build approach page |
+| `@ten98/ui` | Not used | Tailwind CSS, shadcn/ui and daisyUI replace it |
+| `openid-client` | Not used | Better Auth does sign-in |
+| `detect-browser` | Not used | `ua-parser-js` does the same job |
+| `ua-parser-js` | Used at 1.0.41 | Reads the visitor's browser. The 1.x line is MIT. Version 2 is AGPL and must not be installed |
+| `parse5` 8.1.1 and `saxes` 6.0.0 | Used | One reads HTML and the other reads XML |
+| `mmdb-lib` 3.0.5 | Used | Finds a visitor's country |
+| `qrcode-generator` 2.0.4 | Used | Makes QR codes |
 
 ## Not chosen yet
 
@@ -158,8 +158,7 @@ from it. Keep it DRY, and keep it simple (KISS).
 
 ### TypeScript
 
-- The compiler settings match the existing apps: `strict`, no unused locals or parameters, and
-  `erasableSyntaxOnly`. Copied code then checks without edits.
+- The compiler settings are `strict`, no unused locals or parameters, and `erasableSyntaxOnly`.
 - Use only syntax that can be erased: no `enum`, no `namespace` and no constructor parameter properties. Node runs
   the TypeScript files directly.
 - No `any`, `@ts-ignore` or `@ts-nocheck`. Data from outside is `unknown` until zod has checked it.
@@ -199,7 +198,7 @@ from it. Keep it DRY, and keep it simple (KISS).
 - Tables are created by schema changes at release, never while the app runs.
 - After each schema change, the database's functions, triggers, security rules and grants are compared with the
   expected list, so a generated change cannot drop a guard.
-- Money is whole minor units in `bigint`, as in Books. Quantities and rates are `numeric`, and times are
+- Money is whole minor units in `bigint`. Quantities and rates are `numeric`, and times are
   `timestamptz`. Never a floating-point number or a local time.
 - Visit data lives in its own tables, split by day, so old days are dropped whole. Recordings are files in file
   storage, never rows.
@@ -259,7 +258,7 @@ from it. Keep it DRY, and keep it simple (KISS).
 ## The automated check
 
 An automated check enforces this file from the first commit of code. It fails the build when a package, a version
-or a file falls outside it. The existing apps' `check:architecture` script is the starting point. A change merges
+or a file falls outside it. A change merges
 only when the checks pass on its latest commit.
 
 ## Changing the stack

@@ -1,7 +1,6 @@
 # Contributing to ten98-os
 
-Development has not started. It begins when the work to unify Campaign, Discover and Books is finished. Until then
-there is no code to contribute to.
+Development has not started. Until it does, there is no code to contribute to.
 
 ## Before you contribute
 

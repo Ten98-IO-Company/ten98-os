@@ -1,26 +1,20 @@
 # SOP: Reuse a function from a Ten98 app
 
-**Owner:** Ten98 | **Last updated:** 15 November 2026 | **Review:** when development starts
+**Owner:** Ten98 | **Last updated:** 16 November 2026 | **Review:** when development starts
 
 ## Purpose
 
-Copy code from the existing Ten98 apps when no library or API does the job and the code is shown to work, without
-depending on their packages.
+Copy code from a codebase Ten98 owns when no library or API does the job and the code is shown to work, without
+depending on its packages.
 
 ## Scope
 
-Functions in [Campaign](https://github.com/Ten98-IO-Company/ten98-campaign),
-[Discover](https://github.com/Ten98-IO-Company/ten98-discover),
-[Books](https://github.com/Ten98-IO-Company/ten98-books) and the
-[code-system](https://github.com/Ten98-IO-Company/ten98-code-system). They share the OS's core stack, so much of
-their server code can carry over.
+Server functions in a codebase Ten98 owns. This is the fourth step of the reuse order, after the platform, the stack
+and public libraries. The mini-app's reference app, not the codebase the function comes from, decides what the
+feature must do.
 
-These apps are pre-release. Many of their flows do not work yet, and they fall short of their reference apps in
-features and quality. Their code is not trusted as it stands.
-
-Screens are rebuilt, not copied: the OS uses shadcn/ui and daisyUI in place of the design system. Server code
-carries over with changes. Expect to change its tenant keys to the organisation, and its hand-written SQL to typed
-queries.
+That code is not trusted as it stands. Screens are never copied: the OS uses shadcn/ui and daisyUI. Expect to change
+a copied function's tenant keys to the organisation, and its hand-written SQL to typed queries.
 
 ## Who
 
@@ -30,7 +24,7 @@ The agent building the module that needs the function.
 
 1. Confirm that the earlier steps of the reuse order in [STACK.md](../STACK.md) found nothing: the platform, a
    package already in the stack, and a public library or a provider's API.
-2. Search those repositories for a function that does the job.
+2. Search the codebase for a function that does the job.
 3. Read it with its callers and its tests, at one commit.
 4. Prove that it works before you copy it. Run its tests, and run the flow it belongs to end to end. Compare the
    result with the mini-app's reference app.
